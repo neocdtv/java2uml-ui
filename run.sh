@@ -1,2 +1,2 @@
 #!/bin/sh
-java -jar target/jetty-base.jar
+java -jar target/java2uml-ui.jar
