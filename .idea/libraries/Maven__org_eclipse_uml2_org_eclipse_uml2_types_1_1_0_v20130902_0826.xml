@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.eclipse.uml2:org.eclipse.uml2.types:1.1.0.v20130902-0826">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/eclipse/uml2/org.eclipse.uml2.types/1.1.0.v20130902-0826/org.eclipse.uml2.types-1.1.0.v20130902-0826.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/eclipse/uml2/org.eclipse.uml2.types/1.1.0.v20130902-0826/org.eclipse.uml2.types-1.1.0.v20130902-0826-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/eclipse/uml2/org.eclipse.uml2.types/1.1.0.v20130902-0826/org.eclipse.uml2.types-1.1.0.v20130902-0826-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
