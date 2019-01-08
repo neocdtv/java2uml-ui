@@ -3,8 +3,11 @@ Bootstrap:
 
 - use bootstrap-ui
 - read list from output/packages.json and generate drop down with all packages.
+- generate the first package
+- checkout the code from http://viz-js.com/
 
-replace PACKAGE_LINK with javascript link to app-context/relativePath
+- replace PACKAGE_LINK with javascript link to app-context/relativePath or just relativePath - checkout what works
+- find a lib to easy modify svg in browser
 
 Code Snippets:
 - search in generated SVG for PACKAGE_LINK to replace it with a real link to the package
