@@ -1,2 +1,2 @@
 #/bin/sh
-cp -r ../java2uml/output .
+cp -r ../java2uml/output target/classes/static/
