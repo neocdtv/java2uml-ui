@@ -2,19 +2,17 @@ var app = angular.module('app', ['ngTouch', 'ngAnimate', 'ngSanitize', 'ui.boots
     .config(['$stateProvider', function ($stateProvider) {
         $stateProvider
             .state('diagrams', {
-                url: '/diagrams',
-                controller: 'diagramsController',
-                templateUrl: 'templates/diagrams.html'
+                url: '/diagrams/:selectedPackage',
+                controller: 'diagramsController'
             })
             .state('default', {
                 url: '',
                 redirectTo: 'diagrams'
             })
     }])
-    .controller('diagramSelectionController', ['$scope', '$http', '$stateParams', function ($scope, $http, $stateParams) {
-        // get package from url query param
-        // retrieve pacakge.json
-        $scope.selectedPackage = {};
+    .controller('diagramsController', ['$scope', '$http', '$stateParams', '$state', function ($scope, $http, $stateParams, $state) {
+        //conssole($stateParams['selectedPackage']);
+        $scope.selectedPackage;
         $scope.packages = [];
         $http(
             {
@@ -23,8 +21,30 @@ var app = angular.module('app', ['ngTouch', 'ngAnimate', 'ngSanitize', 'ui.boots
             }).then(function (response) {
             $scope.packages = response.data;
         });
-    }])
-    .controller('diagramsController', ['$scope', '$http', '$stateParams', function ($scope, $http, $stateParams) {
-        // get package from url query param
 
+        $scope.$watch('selectedPackage', function () {
+            console.log("selectedPackage: " + $scope.selectedPackage);
+            $http(
+                {
+                    method: "GET",
+                        url: $scope.selectedPackage
+                }).then(function (response) {
+                renderGraph(response.data);
+            });
+        });
+
+        function renderGraph(dot) {
+            var viz = new Viz();
+            console.log(dot)
+            viz.renderSVGElement(dot)
+                .then(function(element) {
+                    document.getElementById("renderTarget").innerHTML = "";
+                    document.getElementById("renderTarget").appendChild(element);
+                })
+                .catch(function(error){
+                    // Create a new Viz instance (@see Caveats page for more info)
+                    // Possibly display the error
+                    console.error(error);
+                });
+        }
     }]);

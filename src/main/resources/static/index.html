@@ -26,15 +26,14 @@ and open the template in the editor.
     </head>
     <body ng-app="app" class="container-fluid">
         <div class="grid">
-            <div ng-controller="diagramSelectionController">
+            <div ng-controller="diagramsController">
                 <select id="how"
                         ng-model="selectedPackage"
+
                         ng-options="package.relativePath as package.packageName for package in packages">
                 </select>
             </div>
-            <div ui-view>
-
-            </div>
+            <div id="renderTarget"></div>
         </div>
     </body>
 </html>
